@@ -1,0 +1,136 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Noto Sans KR', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body::-webkit-scrollbar {
+    width: 12px;
+    background-color: #006868;
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: #F49648;
+    border-radius: 5px;
+    border: solid 2px #006868;
+}
+
+#navbar {
+    align-items: center;
+    background-color: #003030;
+    color:white;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+    position: fixed;
+}
+
+#link-container {
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    width: 100%;
+    scroll-snap-type: y mandatory;
+}
+
+#link-container::-webkit-scrollbar {
+    width: 12px;
+    background-color: #003030;
+}
+
+#link-container::-webkit-scrollbar-thumb {
+    background-color: #F49648;
+    border-radius: 5px;
+    border: solid 2px #003030;
+}
+
+.nav-link {
+    background-color: transparent;
+    border-radius: 5px;
+    color: white;
+    padding: 10px;
+    text-decoration: none;
+    scroll-snap-align: center;
+}
+
+.nav-link:hover {
+    animation-name: change-color;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes change-color {
+    100% {
+        background-color: #F49648;
+    }
+}
+
+#main-doc {
+    background-color: lightyellow;
+    color: white;
+}
+
+.main-section {
+    align-items: flex-start;
+    background-color: #006868;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 40px;
+    line-height: 30px;
+}
+
+.main-section p {
+    margin-left: 20px ;
+}
+
+.main-section code {
+    background-color: #19404083;
+    border-radius: 5px;
+    font-family: monospace;
+    margin-left: 40px;
+    padding: 20px;
+}
+
+.main-section ul {
+    margin-left: 100px;
+}
+
+@media (min-width: 769px) {
+    #navbar {
+        height: 100vh;
+        width: 300px;
+    }
+
+    #main-doc {
+        margin-left: 300px;
+    }
+}
+
+@media (max-width: 768px) {
+    #navbar {
+        gap: 0;
+        max-height: 200px;
+        top: 0;
+        width: 100%;
+    }
+
+    #link-container {
+        text-align: center;
+    }
+
+    #main-doc {
+        margin-top: 200px;
+    }
+
+    .main-section {
+        padding: 10px;
+    }
+}
